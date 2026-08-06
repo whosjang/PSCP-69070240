@@ -313,4 +313,8 @@ No
 | I did not copy AI-generated text directly into this file. | Yes |
 | I did not copy code from another person. | Yes |
 | If I received human help, I disclosed it in this file. | Yes |
+<<<<<<< HEAD
 | I submitted the final code to the OJ by myself. | Yes |
+=======
+| I submitted the final code to the OJ by myself. | Yes |
+>>>>>>> 7a591199b958ad6a30e23966a406378e91bceade

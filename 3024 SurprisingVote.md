@@ -15,13 +15,13 @@
 หมายเลข/ชื่อโจทย์ OJ:
 
 ```text
-OJ2996 - สลับตัวอักษร
+OJ3024 - SurprisingVote
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```text
-544543
+550009
 ```
 
 สถานะ OJ:
@@ -73,7 +73,7 @@ More than 4 weeks
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
 ```text
-โจทย์ต้องการให้กลับด้านตัวอักษรจากข้อความยาว 5 ตัว และแปลงตัวอักษรทั้งหมดเป็นตัวพิมพ์เล็ก
+โจทย์ต้องการให้แสดงแจ้งเตือน surprise จากคะแนนของ 3 คน โดยคะแนนของผู้ที่มีค่าสูงสุดห่างกับผู้ที่มีค่าน้อยสุดมากกว่า 2 คะแนนจะแสดง surprising ถ้าไม่จะแสดง not surprising
 ```
 
 ---
@@ -93,8 +93,10 @@ More than 4 weeks
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-step 1: กำหนดตัวแปร name รับตัวอักษร 5 ตัว
-step2: แสดง name ให้เป็นตัวเล็กโดยใช้ .lower() และกลับด้าน name โดยใช้ string slicing
+step 1: ตั้งตัวแปร 2 ตัวแปรเพื่อรับคะแนนรวมและคะแนนสูงสุด
+step 2: กำหนดว่าถ้าคะแนนต่ำสุด < 0 ให้คะแนนต่ำสุด = 0
+step 3: คำนวณหาคะแนนต่ำสุด
+step 4: แสดงผล surprise
 ```
 
 ---
@@ -114,7 +116,7 @@ step2: แสดง name ให้เป็นตัวเล็กโดยใ�
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
 ```text
-วิธีสุดท้ายที่ใช้จริงคือแผนแรก ใช้ [-6:-1] เพื่อให้ค่าที่ออกมาเริ่มจากตัวหลังสุดหยุดตัวที่ 5 นับจากหลัง
+เปลี่ยน input จาก int เป็น float เพราะ โจทย์กำหนดเป็นจำนวนจริง
 ```
 
 ---
@@ -134,31 +136,32 @@ step2: แสดง name ให้เป็นตัวเล็กโดยใ�
 ทำไมเลือก case นี้:
 
 ```text
-ตัวอักษรมากกว่า 5 ตัว
+คะแนนเท่ากัน
 ```
 
 Input:
 
 ```text
-Makalov
+24
+8
 ```
 
 Expected output:
 
 ```text
-volakam
+Not Surprising
 ```
 
 Actual output:
 
 ```text
-volak
+Not Surprising
 ```
 
 Result:
 
 ```text
-Not Pass
+Pass
 ```
 
 ### Test Case 2
@@ -166,25 +169,26 @@ Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-จำนวนตัวน้อยกว่า 5
+พอดีขอบ
 ```
 
 Input:
 
 ```text
-Ryan
+15
+8
 ```
 
 Expected output:
 
 ```text
-nayr
+Surprising
 ```
 
 Actual output:
 
 ```text
-nayr
+Surprising
 ```
 
 Result:
@@ -198,25 +202,26 @@ Pass
 ทำไมเลือก case นี้:
 
 ```text
-ตัวอักษร 5 ตัว แต่รูปแบบต่างกัน
+คะแนนรวมเยอะจนค่าต่ำสุดต่ำมากไม่ได้
 ```
 
 Input:
 
 ```text
-PetER
+25.0
+9.0
 ```
 
 Expected output:
 
 ```text
-retep
+Not Surprising
 ```
 
 Actual output:
 
 ```text
-retep
+Not Surprising
 ```
 
 Result:
@@ -310,8 +315,4 @@ No
 | I did not copy AI-generated text directly into this file. | Yes |
 | I did not copy code from another person. | Yes |
 | If I received human help, I disclosed it in this file. | Yes |
-<<<<<<< HEAD
 | I submitted the final code to the OJ by myself. | Yes |
-=======
-| I submitted the final code to the OJ by myself. | Yes |
->>>>>>> 7a591199b958ad6a30e23966a406378e91bceade
